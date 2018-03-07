@@ -35,15 +35,15 @@ void loop() {
 
   for (int i = 0; i < countOfButtons; i++) {
     
-    if (buttonPinsStatuses[i] != digitalRead(buttonPins[i])) { //проверява има ли промяна в статуса на бутона
-      buttonPinsStatuses[i] = digitalRead(buttonPins[i]);  //проверява за натиснат бутон
+    if (buttonPinsStatuses[i] != digitalRead(buttonPins[i])) { // Check for change button status
+      buttonPinsStatuses[i] = digitalRead(buttonPins[i]);  // Check for button pressed
         
       if (buttonPinsStatuses[i] == LOW) {
-        if (ledPinsStatuses[i] == LOW) { // ако LED-а е бил изключен го включва
+        if (ledPinsStatuses[i] == LOW) { // Turn led on
           ledPinsStatuses[i] = HIGH;
         }
       } else {
-        ledPinsStatuses[i] = LOW; // ако LED-а е бил включен го изключва
+        ledPinsStatuses[i] = LOW; // Turn led off
       }
         
       digitalWrite (ledPins[i], ledPinsStatuses[i]);
@@ -51,15 +51,15 @@ void loop() {
   }
 
 
-//  if (buttonState1 != digitalRead(buttonPin1))  //проверява има ли промяна в статуса на бутона
+//  if (buttonState1 != digitalRead(buttonPin1))
 //  {
-//    buttonState1=digitalRead(buttonPin1);  //проверява за натиснат бутон
+//    buttonState1=digitalRead(buttonPin1);
 //    if (buttonState1==LOW)
 //    {
-//      if (ledState1==LOW)   // ако LED-а е бил изключен го включва
+//      if (ledState1==LOW)
 //      {ledState1=HIGH;}
 //    else
-//      {ledState1=LOW;}      // ако LED-а е бил включен го изключва
+//      {ledState1=LOW;}
 //      digitalWrite (ledPin1, ledState1);
 //    }
 //  }
